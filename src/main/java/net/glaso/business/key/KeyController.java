@@ -15,7 +15,7 @@ public class KeyController {
     private final KeyService keyService;
 
     @PostMapping("key-store")
-    public ResponseEntity<?> createKeyStore(@RequestBody KeyStore keyStore)  {
+    public ResponseEntity<KeyStore> createKeyStore(@RequestBody KeyStore keyStore)  {
         keyStore = this.keyService.insertKeyStore(keyStore);
         return ResponseEntity.ok(keyStore);
     }
