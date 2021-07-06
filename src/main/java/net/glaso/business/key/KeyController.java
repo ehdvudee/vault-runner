@@ -17,6 +17,11 @@ public class KeyController {
     @PostMapping("key-store")
     public ResponseEntity<KeyStore> createKeyStore(@RequestBody KeyStore keyStore)  {
         keyStore = this.keyService.insertKeyStore(keyStore);
+<<<<<<< .merge_file_a13568
         return ResponseEntity.ok(keyStore);             
+=======
+
+        return ResponseEntity.ok(keyStore);
+>>>>>>> .merge_file_a17972
     }
 }
