@@ -1,4 +1,4 @@
-package net.glaso.business.key;
+package net.glaso.key.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -31,5 +31,11 @@ public class Key implements Serializable {
 
     @Column(name = "key_tag")
     private String keyTag;
+
+    private EnumKeyType keyType;
+
+    private boolean convergentEncryption;
+
+    private boolean exportable;
 
 }

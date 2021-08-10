@@ -32,17 +32,22 @@ dependencies {
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
 
     // Spring
-    testImplementation 'org.springframework.boot:spring-boot-starter-test'
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-    implementation 'org.springframework.boot:spring-boot-starter-validation'
+    implementation 'org.springframework.boot:spring-boot-starter-batch'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.springframework.batch:spring-batch-test'
 
-    // QueryDSL
+    // Querydsl
     implementation "com.querydsl:querydsl-jpa:${queryDslVersion}"
     annotationProcessor(
             "javax.persistence:javax.persistence-api",
             "javax.annotation:javax.annotation-api",
             "com.querydsl:querydsl-apt:${queryDslVersion}:jpa")
+
+    // Vault, Consul
+    implementation 'org.springframework.vault:spring-vault-core:2.3.0'
+    implementation 'com.ecwid.consul:consul-api:1.4.2'
 
     // Lombok
     compile 'org.projectlombok:lombok'
@@ -54,6 +59,10 @@ dependencies {
 
     // H2-DB
     implementation 'com.h2database:h2:1.4.200'
+
+    // scheduler
+    implementation 'net.javacrumbs.shedlock:shedlock-spring:4.20.0'
+    implementation 'net.javacrumbs.shedlock:shedlock-provider-jdbc-template:4.20.0'
 }
 
 test {

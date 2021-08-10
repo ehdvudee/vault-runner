@@ -1,4 +1,4 @@
-package net.glaso.business.key;
+package net.glaso.key.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -6,7 +6,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotBlank;
 
 
 @Getter
@@ -22,7 +21,6 @@ public class KeyStore {
     private int keyStoreId;
 
     @Column(name = "key_store_name")
-    @NotBlank(message = "Name is mandatory")
     private String keyStoreName;
 
 }

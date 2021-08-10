@@ -1,14 +1,37 @@
 spring:
+  profiles:
+    active: local
+
+---
+
+spring:
+  profiles: local
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
     url: jdbc:h2:/C:\Users\USER\Desktop\test
     driver-class-name: org.h2.Driver
     username: sa
     password:
+
   jpa:
     database-platform: org.hibernate.dialect.H2Dialect
     hibernate:
       ddl-auto: none
+
+  batch:
+    job:
+      enabled: false
+
+logging:
+  level:
+    net.glaso: DEBUG
+
+vault:
+  ip: 10.113.229.141
+  port: 80
+  token: s.vskCAwG9nFS0iZaZIGyqT2g9
+  scheme: http
+
 
 
 
